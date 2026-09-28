@@ -20,7 +20,7 @@ spec:
 
       containers:
         - name: nginx
-          image: ghcr.io/yongwon-lee/nongol:20ec82ef3a00e0a6e46a17f5e8fbb32ec8e022b8
+          image: ghcr.io/yongwon-lee/nongol:4f6f47ffe25adef200a585ed688f28b91e7306dd
 
           ports:
             - containerPort: 80
