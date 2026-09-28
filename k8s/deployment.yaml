@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homepage
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: homepage
+
+  template:
+    metadata:
+      labels:
+        app: homepage
+
+    spec:
+      nodeSelector:
+        workload: always-on
+
+      containers:
+        - name: nginx
+          image: ghcr.io/yongwon-lee/nongol:latest
+
+          ports:
+            - containerPort: 80
+
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 300m
+              memory: 256Mi
